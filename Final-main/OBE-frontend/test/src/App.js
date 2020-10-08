@@ -48,6 +48,9 @@ import AdminDashboard from "./component/Admin_Framework/AdminDashboard";
 import Footer from "./Footer";
 import Courses from './component/Courses/Form'
 import Assignassignment from './component/assignments/form'
+import BodyComponent from './component/Body/body'
+import BodyComponent2 from './component/Body/body2'
+
 export class App extends Component {
   componentDidMount() {
     store.dispatch(loaduser);
@@ -59,6 +62,7 @@ export class App extends Component {
         <Router>
           <Fragment>
             <Header />
+            <br/>
             <div className="container">
               <Switch>
                 <ChairmanPrivateRoute
@@ -195,11 +199,16 @@ export class App extends Component {
                 ></PrivateRoute>
                 <Route exact path="/login" component={Login}></Route>
                 <Route exact path="/register" component={Register}></Route>
+                
+
               </Switch>
             </div>
+            <BodyComponent />
+            <BodyComponent2 />
           </Fragment>
         </Router>
         <br/>
+        
         <Footer/>
       </Provider>
     );
